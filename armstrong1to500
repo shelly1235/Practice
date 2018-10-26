@@ -1,0 +1,35 @@
+#include<stdio.h>
+#include<conio.h>
+#include<math.h>
+int numDigits(int n)
+{
+   int i=0;
+   while(n>0)
+   {
+       n=n/10;
+       i++;
+      
+   }
+   return i;
+   
+    
+}
+int main(){
+    int num,r;
+
+    for(num=1;num<=500;num++){
+        int sum = 0;
+           int temp=num;
+            int n1 = numDigits(num);
+                 while(temp!=0){
+                     r=temp%10;
+                     temp=temp/10;
+                     sum=sum+pow(r,n1);
+                 }
+         
+         if(sum==num)
+             printf("Armstrong number is :%d\n ",num);
+    }
+
+    return 0;
+}
